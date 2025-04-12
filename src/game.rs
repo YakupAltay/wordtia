@@ -83,6 +83,8 @@ pub async fn run_game() {
         .expect("Failed to connect to Celestia RPC");
     let config = TxConfig::default();
 
+    println!("📤 Submitting game result to Celestia...");
+
     // Submit the blob and log the result
     match submit_blob_to_celestia(&client, blob, config).await {
         Ok(response) => log_submission_result(&response),
