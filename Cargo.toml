@@ -1,0 +1,20 @@
+[package]
+name = "wordtia"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "wordtia"
+path = "src/main.rs"
+
+[dependencies]
+base64 = "0.21"
+celestia-rpc = "0.9.1"
+celestia-types = "0.10.1"
+tokio = { version = "1.40.0", features = ["full"] }
+anyhow = "1.0.89"
+rand = "0.8"
+sha2 = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = "0.4"

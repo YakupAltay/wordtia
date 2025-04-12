@@ -1,0 +1,23 @@
+services:
+    celestia-light-node:
+        build:
+            context: .
+            args:
+                GO_VERSION: 1.23.6
+                REPO: https://github.com/celestiaorg/celestia-node.git
+                PROJECT_FOLDER: celestia-node
+                CHAIN_ID: mocha
+                DAEMON_NAME: celestia
+                DAEMON_HOME: /root/.celestia-light-mocha-4
+                DAEMON_VERSION: v0.22.0-mocha
+                DEFAULT_KEY_NAME: my_celes_key
+                DEFAULT_RPC_PORT: 10101
+                NODE_TYPE: light
+                RPC_ENDPOINT: rpc-mocha.pops.one
+                CELESTIA_OTEL_URL: otel.celestia.tools:4318
+                TRUSTED_BLOCK_HASH: D8F05D953758976C3304EE2367A2C2E3E05F38C22D4289D5ACEBDA5FD8D934B5
+                TRUSTED_BLOCK_HEIGHT: 5646800
+        container_name: celestia-light-node
+        restart: always
+        ports:
+        - 10101:10101
